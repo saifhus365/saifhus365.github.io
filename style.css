@@ -616,6 +616,14 @@ a:hover {
     align-items: flex-start;
 }
 
+.thesis-footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
 .thesis-embed {
     position: relative;
     width: 100%;
@@ -799,16 +807,12 @@ a:hover {
         padding: 25px;
     }
 
-    .thesis-header {
+    .thesis-footer-actions {
         flex-direction: column;
     }
 
-    .thesis-actions {
+    .thesis-footer-actions .btn {
         width: 100%;
-    }
-
-    .thesis-actions .btn {
-        flex: 1;
         text-align: center;
     }
 
