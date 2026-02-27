@@ -3,18 +3,18 @@
     --bg-dark: #0a0a0f;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    
+
     --accent-primary: #818cf8;
     --accent-secondary: #c084fc;
     --accent-glow: rgba(129, 140, 248, 0.5);
-    
+
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    
+
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -42,7 +42,12 @@ body {
 }
 
 /* ===== Typography ===== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
@@ -134,8 +139,13 @@ a:hover {
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(50px, 50px) rotate(20deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(50px, 50px) rotate(20deg);
+    }
 }
 
 /* ===== UI Components ===== */
@@ -573,6 +583,58 @@ a:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ===== Thesis Section ===== */
+.thesis-card {
+    padding: 40px;
+}
+
+.thesis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.thesis-title {
+    font-size: 1.6rem;
+    margin: 10px 0 15px;
+    color: var(--text-main);
+}
+
+.thesis-desc {
+    color: var(--text-muted);
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+.thesis-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+    align-items: flex-start;
+}
+
+.thesis-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.thesis-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 /* ===== Education Section ===== */
 .education-grid {
     display: grid;
@@ -701,34 +763,102 @@ a:hover {
 
 /* ===== Media Queries ===== */
 @media (max-width: 900px) {
-    .hero-title { font-size: 3rem; }
-    .hero-subtitle { font-size: 1.4rem; }
-    
-    .timeline::before { left: 0; }
-    .timeline-item { padding-left: 30px; }
-    .timeline-dot { left: -8px; }
-    .exp-header { flex-direction: column; align-items: flex-start; }
-    .exp-meta { align-items: flex-start; margin-top: 10px; }
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-dot {
+        left: -8px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exp-meta {
+        align-items: flex-start;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .mobile-menu-btn { display: block; }
-    
-    .hero-container { padding: 0; }
-    .hero-content { padding: 2rem 1rem; }
-    
-    .hero-title { font-size: 2.5rem; }
-    .section-title { font-size: 2rem; }
-    
-    .projects-grid, .education-grid { grid-template-columns: 1fr; }
-    
-    .edu-card { flex-direction: column; gap: 15px; }
-    
-    .footer-content { flex-direction: column; text-align: center; }
+    .thesis-card {
+        padding: 25px;
+    }
+
+    .thesis-header {
+        flex-direction: column;
+    }
+
+    .thesis-actions {
+        width: 100%;
+    }
+
+    .thesis-actions .btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero-container {
+        padding: 0;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid,
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero-actions { flex-direction: column; }
-    .btn { width: 100%; text-align: center; }
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
