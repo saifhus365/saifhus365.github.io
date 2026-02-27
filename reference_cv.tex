@@ -1,0 +1,304 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=1 cm, % seperation between body and page edge from the left
+    right=1 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Husain's CV},
+    pdfauthor={Husain Qasim Ali Saif},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Husain Qasim Ali Saif - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    )
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Husain Qasim Ali Saif}
+    \vspace{0.1 cm}
+
+{\footnotesize \textit{UAE Golden Visa Holder | Research ML Engineer specializing in LLM Systems \& RAG}}
+
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Dubai, United Arab Emirates}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:saifhus365@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}saifhus365@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+971-569859353}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}056 985 9353}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/husain-saif-49582b1a5/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}Husain Saif}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/saifhus365}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}saifhus365}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+
+\section{Technical Skills}
+
+\begin{onecolentry}
+\textbf{LLM Systems:} RAG (LangChain, LlamaIndex), Multi-Agent AI (LangGraph, CrewAI), Prompt Engineering, Hallucination Reduction, Embedding Models (BAAI, ColBERT), Vector DBs (Pinecone, Chroma).
+\end{onecolentry}
+\begin{onecolentry}
+\textbf{ML \& Research:} Fine-tuning LLMs (LoRA, QLoRA), Computer Vision (YOLOv10, ViT, DETR), Experiment Tracking (W\&B, MLflow).
+\end{onecolentry}
+\begin{onecolentry}
+\textbf{Engineering \& MLOps:} Python, PyTorch, FastAPI, Docker, SQL, React, Git, CI/CD (GitHub Actions), Cloud (Azure, GCP), Redis, Cloud Run.
+\end{onecolentry}
+
+
+\section{Experience}
+
+\begin{twocolentry}{
+    \textit{Jena, Germany} \\ \textit{May 2024 – Jan 2026}}
+    \textbf{AI Research Assistant} \\
+    \textit{Max Planck Institute of Geoanthropology}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+        \item Shipped production \textbf{RAG system} serving 100K+ climate research papers with \textbf{30\% faster query response} ($<$2s latency) using BAAI embeddings.
+        \item Deployed \textbf{multi-agent LLM system} (LangGraph + Llama-3.1-Nemotron-70B) achieving \textbf{37\% improvement} in retrieval accuracy through systematic evaluation metrics and ablation testing.
+        \item Built React + FastAPI video retrieval interface with ColBERT embeddings for timestamped semantic search; reduced hallucinations \textbf{42\%} via grounded retrieval validation and custom evaluation harness.
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.25cm} % <-- extra white space
+
+
+\begin{twocolentry}{
+    \textit{Bangalore, India} \\ \textit{Jun 2021 – Sep 2021}}
+    \textbf{Machine Learning Intern} \\
+    \textit{Atrillu Media}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item Built a personalized content recommendation model, increasing influencer engagement by \textbf{30\%}.
+    \item Analyzed influencer posting patterns using advanced analytics to optimize scheduling.
+    \item Automated influencer-specific app pipelines, reducing manual overhead.
+\end{highlights}
+\end{onecolentry}
+% ---------- Projects ----------
+\section{Projects}
+
+\begin{twocolentry}{
+    \textit{\href{https://github.com/alexkubl/retmed}{RetMed}}}
+    \textbf{Replication and Transformation of Medical Imaging Data (RetMed)}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item Applied SOTA \textbf{Object Detection models} (ViT, YOLOv10, DETR) (as of 2024) to the \href{https://www.kaggle.com/competitions/vinbigdata-chest-xray-abnormalities-detection/data}{VindrCXR} dataset for lung abnormality detection, Beating the top competition scores on Kaggle.
+    \item Tools: Python, PyTorch, MMDet, MMYOLO
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.25cm} % <-- extra white space
+
+
+\begin{twocolentry}{
+    \textit{\href{https://www.uni-weimar.de/de/universitaet/aktuell/bauhausjournal-online/titel/leipziger-buchmesse-illumulus-zeigt-wie-ki-gesteuertes-storytelling-gelingt-1/}{Illumulus}}}
+    \textbf{Storytelling AI (Illumulus)}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item Enhanced storytelling AI using RAG on Wikipedia documents, producing more realistic narratives.
+    \item Integrated outputs into \textbf{Diffusion Models} (\href{https://huggingface.co/stabilityai/stable-diffusion-3-medium}{Stable Diffusion 3}) for visual augmentation.
+    \item Tools: Python, LangChain, Ollama, PyTorch, FastAPI, React
+\end{highlights}
+\end{onecolentry}
+
+
+\vspace{0.25cm}
+
+
+% ---------- Education ----------
+\section{Education}
+
+\begin{twocolentry}{\textit{Oct 2023 – Jan 2026}}
+    \textbf{Bauhaus Universität Weimar, Germany} \\
+    \textit{MS in Computer Science for Digital Media}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item Grade: 1.5 (Very Good, Top 10\%)
+    \item Coursework: Machine Learning, NLP, Deep Learning for CV, Formal Methods, Image Analysis, Photogrammetry
+  \item \textbf{Thesis} (\textbf{IJCAI 2026}, primary author): Multi-agent debate framework for scientific idea generation, achieving \textbf{27\% gain} over SoTA. \href{https://downloads.webis.de/theses/papers/saif_2026.pdf}{[PDF]}
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.25cm} % <-- extra white space
+
+
+\begin{twocolentry}{\textit{Sep 2018 – Mar 2022}}
+    \textbf{Veermata Jijabai Technological Institute, Mumbai, India} \\
+    \textit{B.Tech in Computer Engineering}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item CGPA: 7.23/10
+    \item Coursework: Data Structures, Algorithms, Linear Algebra, Discrete Mathematics, Machine Learning, Cryptography
+\end{highlights}
+\end{onecolentry}    
+
+    
+
+
+\end{document}

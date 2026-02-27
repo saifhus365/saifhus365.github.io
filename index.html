@@ -4,28 +4,297 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name | Portfolio</title>
+    <title>Husain Qasim Ali Saif | AI Engineer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- Background Elements -->
+    <div class="bg-mesh">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
-    <section id="projects">
-        <div class="project-card">
-            <h2>Project Title</h2>
-            <p>Short description of the project.</p>
-            <a href="https://yourapp.streamlit.app" target="_blank">Live Demo</a>
-            <a href="#" onclick="openSlides('project1')">View Slides</a>
-            <a href="https://github.com/you/repo" target="_blank">GitHub</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">HQAS.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </section>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero fade-in-section">
+            <div class="container hero-container">
+                <div class="hero-content glass-panel">
+                    <span class="badge">UAE Golden Visa Holder</span>
+                    <h1 class="hero-title">Husain Qasim Ali Saif</h1>
+                    <h2 class="hero-subtitle">
+                        Research ML Engineer specializing in <span class="gradient-text">LLM Systems & RAG</span>
+                    </h2>
+                    <p class="hero-desc">
+                        Bridging the gap between cutting-edge AI research and scalable production systems. Designing
+                        intelligent, resilient architectures using language models and multi-agent systems.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="mailto:saifhus365@gmail.com" class="social-icon" aria-label="Email"><i
+                                class="fa-regular fa-envelope"></i></a>
+                        <a href="tel:+971569859353" class="social-icon" aria-label="Phone"><i
+                                class="fas fa-phone"></i></a>
+                        <a href="https://www.linkedin.com/in/husain-saif-49582b1a5/" target="_blank" class="social-icon"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/saifhus365" target="_blank" class="social-icon"
+                            aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Skills Section -->
+        <section id="skills" class="skills section fade-in-section">
+            <div class="container">
+                <h2 class="section-title">Technical <span class="gradient-text">Expertise</span></h2>
+
+                <div class="skills-grid">
+                    <div class="skill-card glass-panel reveal-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>LLM Systems</h3>
+                        <p>RAG (LangChain, LlamaIndex), Multi-Agent AI (LangGraph, CrewAI), Prompt Engineering,
+                            Hallucination Reduction.</p>
+                        <div class="tech-tags">
+                            <span>BAAI</span><span>ColBERT</span><span>Pinecone</span><span>Chroma</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-panel reveal-up" style="transition-delay: 0.1s;">
+                        <div class="skill-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>ML & Research</h3>
+                        <p>Fine-tuning LLMs (LoRA, QLoRA), Computer Vision, Deep Learning, and advanced Experiment
+                            Tracking.</p>
+                        <div class="tech-tags">
+                            <span>YOLOv10</span><span>ViT</span><span>DETR</span><span>W&B</span><span>MLflow</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-panel reveal-up" style="transition-delay: 0.2s;">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Engineering & MLOps</h3>
+                        <p>Building robust, scalable pipelines and APIs. Containerization, CI/CD, and Cloud Deployments.
+                        </p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>PyTorch</span><span>FastAPI</span><span>Docker</span><span>React</span><span>Azure
+                                / GCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section fade-in-section">
+            <div class="container">
+                <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+
+                <div class="timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">AI Research Assistant</h3>
+                                    <h4 class="exp-company">Max Planck Institute of Geoanthropology</h4>
+                                </div>
+                                <div class="exp-meta">
+                                    <span class="exp-date"><i class="far fa-calendar-alt"></i> May 2024 – Jan
+                                        2026</span>
+                                    <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Jena,
+                                        Germany</span>
+                                </div>
+                            </div>
+                            <ul class="exp-highlights">
+                                <li>Shipped production <strong>RAG system</strong> serving 100K+ climate research papers
+                                    with <strong>30% faster query response</strong> (<2s latency) using BAAI
+                                        embeddings.</li>
+                                <li>Deployed <strong>multi-agent LLM system</strong> (LangGraph +
+                                    Llama-3.1-Nemotron-70B) achieving <strong>37% improvement</strong> in retrieval
+                                    accuracy through systematic evaluation metrics and ablation testing.</li>
+                                <li>Built React + FastAPI video retrieval interface with ColBERT embeddings for
+                                    timestamped semantic search; reduced hallucinations <strong>42%</strong> via
+                                    grounded retrieval validation and custom evaluation harness.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">Machine Learning Intern</h3>
+                                    <h4 class="exp-company">Atrillu Media</h4>
+                                </div>
+                                <div class="exp-meta">
+                                    <span class="exp-date"><i class="far fa-calendar-alt"></i> Jun 2021 – Sep
+                                        2021</span>
+                                    <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Bangalore,
+                                        India</span>
+                                </div>
+                            </div>
+                            <ul class="exp-highlights">
+                                <li>Built a personalized content recommendation model, increasing influencer engagement
+                                    by <strong>30%</strong>.</li>
+                                <li>Analyzed influencer posting patterns using advanced analytics to optimize
+                                    scheduling.</li>
+                                <li>Automated influencer-specific app pipelines, reducing manual overhead.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section fade-in-section">
+            <div class="container">
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-panel reveal-up">
+                        <div class="project-info">
+                            <h3 class="project-title">RetMed</h3>
+                            <h4 class="project-subtitle">Replication and Transformation of Medical Imaging Data</h4>
+                            <p class="project-desc">Applied SOTA Object Detection models (ViT, YOLOv10, DETR) to the
+                                VindrCXR dataset for lung abnormality detection, beating top competition scores on
+                                Kaggle.</p>
+                            <div class="tech-tags">
+                                <span>Python</span><span>PyTorch</span><span>MMDet</span><span>MMYOLO</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/alexkubl/retmed" target="_blank" class="btn btn-outline"><i
+                                    class="fab fa-github"></i> Repository</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-panel reveal-up" style="transition-delay: 0.1s;">
+                        <div class="project-info">
+                            <h3 class="project-title">Illumulus</h3>
+                            <h4 class="project-subtitle">Storytelling AI</h4>
+                            <p class="project-desc">Enhanced storytelling AI using RAG on Wikipedia documents, producing
+                                more realistic narratives. Integrated outputs into Stable Diffusion 3 for visual
+                                augmentation.</p>
+                            <div class="tech-tags">
+                                <span>Python</span><span>LangChain</span><span>Ollama</span><span>PyTorch</span><span>FastAPI</span><span>React</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.uni-weimar.de/de/universitaet/aktuell/bauhausjournal-online/titel/leipziger-buchmesse-illumulus-zeigt-wie-ki-gesteuertes-storytelling-gelingt-1/"
+                                target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i>
+                                Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education section fade-in-section">
+            <div class="container">
+                <h2 class="section-title">Academic <span class="gradient-text">Background</span></h2>
+
+                <div class="education-grid">
+                    <!-- Edu 1 -->
+                    <div class="edu-card glass-panel reveal-up">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="edu-details">
+                            <h3 class="edu-degree">MS in Computer Science for Digital Media</h3>
+                            <h4 class="edu-uni">Bauhaus Universität Weimar, Germany</h4>
+                            <p class="edu-date"><i class="far fa-calendar-alt"></i> Oct 2023 – Jan 2026</p>
+                            <div class="edu-highlights">
+                                <p><strong>Grade:</strong> 1.5 (Very Good, Top 10%)</p>
+                                <p><strong>Thesis:</strong> Multi-agent debate framework for scientific idea generation
+                                    (IJCAI 2026, primary author), achieving 27% gain over SoTA.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edu 2 -->
+                    <div class="edu-card glass-panel reveal-up" style="transition-delay: 0.1s;">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <div class="edu-details">
+                            <h3 class="edu-degree">B.Tech in Computer Engineering</h3>
+                            <h4 class="edu-uni">Veermata Jijabai Technological Institute, Mumbai, India</h4>
+                            <p class="edu-date"><i class="far fa-calendar-alt"></i> Sep 2018 – Mar 2022</p>
+                            <div class="edu-highlights">
+                                <p><strong>CGPA:</strong> 7.23/10</p>
+                                <p><strong>Coursework:</strong> Data Structures, Algorithms, Linear Algebra, Machine
+                                    Learning, Cryptography.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>HQAS.</h2>
+                <p>Building the future of AI interfaces and systems.</p>
+            </div>
+            <div class="footer-social">
+                <a href="mailto:saifhus365@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/husain-saif-49582b1a5/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/saifhus365" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Husain Qasim Ali Saif. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
