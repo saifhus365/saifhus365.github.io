@@ -93,3 +93,4 @@
 'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
  GET / 200 in 327ms (compile: 84ms, render: 243ms)
 ✓ Compiled in 74ms
+✓ Compiled in 40ms

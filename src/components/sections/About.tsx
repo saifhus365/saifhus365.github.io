@@ -35,7 +35,7 @@ export default function About() {
                         </p>
 
                         <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
-                            Currently, I'm an <strong className="font-semibold text-foreground">AI Engineer</strong> specializing in <strong className="font-semibold text-accent-secondary">Large Language Models (LLMs)</strong> and <strong className="font-semibold text-accent-secondary">Retrieval-Augmented Generation (RAG)</strong>. I design intelligent architectures; from multi-agent systems to scalable AI pipelines,that solve complex problems holistically.
+                            Currently, I'm an <strong className="font-semibold text-foreground">AI Engineer</strong> specializing in <strong className="font-semibold text-accent-secondary">Large Language Models (LLMs)</strong> and <strong className="font-semibold text-accent-secondary">Retrieval-Augmented Generation (RAG)</strong>. I design intelligent architectures; from multi-agent systems to scalable AI pipelines, that solve complex problems holistically.
                         </p>
 
                         <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
