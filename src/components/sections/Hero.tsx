@@ -81,7 +81,8 @@ export default function Hero() {
                             />
                         </a>
                         <a
-                            href="#"
+                            href={hero.resumeLink}
+                            download="HQAS_CV_26.pdf"
                             className="px-8 py-3 rounded-full border border-glass-border bg-glass-bg text-foreground font-medium hover:bg-white/5 transition-all flex items-center gap-2"
                         >
                             <Download size={18} />

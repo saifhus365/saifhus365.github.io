@@ -11,6 +11,7 @@ export const portfolioData = {
         phone: "+971569859353",
         linkedin: "https://www.linkedin.com/in/husain-saif-49582b1a5/",
         github: "https://github.com/saifhus365",
+        resumeLink: "/HQAS_CV_26.pdf",
     },
     skills: [
         {
@@ -24,7 +25,7 @@ export const portfolioData = {
                 { name: "CrewAI", icon: "TbRobot" },
                 { name: "Pinecone", icon: "SiPinecone" },
                 { name: "ChromaDB", icon: "SiChroma" },
-                { name: "Ollama", icon: "SiOllama" },
+                { name: "Ollama", icon: "SiLlama" },
             ],
         },
         {

@@ -105,3 +105,36 @@
  GET / 200 in 158ms (compile: 123ms, render: 35ms)
  GET / 200 in 26ms (compile: 1585µs, render: 25ms)
  GET / 200 in 16ms (compile: 1472µs, render: 14ms)
+✓ Compiled in 51ms
+ GET / 200 in 272ms (compile: 124ms, render: 148ms)
+ GET / 200 in 275ms (compile: 87ms, render: 187ms)
+ GET / 200 in 58ms (compile: 16ms, render: 43ms)
+ GET / 200 in 21ms (compile: 1895µs, render: 19ms)
+✓ Compiled in 33ms
+'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+ GET /resume.pdf 404 in 820ms (compile: 723ms, render: 98ms)
+✓ Compiled in 77ms
+ GET / 200 in 154ms (compile: 81ms, render: 74ms)
+ GET / 200 in 151ms (compile: 102ms, render: 49ms)
+ GET / 200 in 42ms (compile: 1612µs, render: 40ms)
+ GET / 200 in 40ms (compile: 2ms, render: 38ms)
+'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+ GET /HQAS_CV_26.pdf 404 in 52ms (compile: 8ms, render: 44ms)
+ GET / 200 in 140ms (compile: 72ms, render: 68ms)
+ GET / 200 in 140ms (compile: 93ms, render: 47ms)
+ GET / 200 in 41ms (compile: 1715µs, render: 39ms)
+ GET / 200 in 34ms (compile: 1523µs, render: 32ms)
+'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+ GET /src/data/HQAS_CV_26.pdf 404 in 46ms (compile: 9ms, render: 37ms)
+✓ Compiled in 48ms
+ GET / 200 in 183ms (compile: 106ms, render: 77ms)
+ GET / 200 in 174ms (compile: 126ms, render: 49ms)
+ GET / 200 in 37ms (compile: 1852µs, render: 36ms)
+ GET / 200 in 28ms (compile: 1453µs, render: 27ms)
+✓ Compiled in 87ms
+✓ Compiled in 36ms
+ GET / 200 in 130ms (compile: 76ms, render: 54ms)
+ GET / 200 in 34ms (compile: 1475µs, render: 32ms)
+ GET / 200 in 25ms (compile: 1879µs, render: 23ms)
+ GET / 200 in 16ms (compile: 1157µs, render: 15ms)
+✓ Compiled in 47ms
