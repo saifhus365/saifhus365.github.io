@@ -58,9 +58,7 @@ export default function Skills() {
                     <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground">
                         Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">Expertise</span>
                     </h2>
-                    <p className="text-muted mt-4 max-w-2xl">
-                        A comprehensive breakdown of the technologies, frameworks, and ML architectures I use to bridge research and production.
-                    </p>
+
                 </motion.div>
 
                 <motion.div
