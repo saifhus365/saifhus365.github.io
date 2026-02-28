@@ -31,7 +31,7 @@ export default function About() {
                         className="md:col-span-7 space-y-6"
                     >
                         <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
-                            Hi, I'm <strong className="font-semibold text-accent-primary">Husain Saif</strong>. I started my journey with a B.Tech in Computer Engineering from VJTI Mumbai, but my absolute obsession with artificial intelligence led me to Germany, where I'm completing my MS in Computer Science for Digital Media at the <strong className="font-semibold text-foreground">Bauhaus Universität Weimar</strong>.
+                            Hi, I'm <strong className="font-semibold text-accent-primary">Husain Saif</strong>. I started my journey with a B.Tech in Computer Engineering from VJTI Mumbai, but my absolute obsession with artificial intelligence led me to Germany, where I completed my MS in Computer Science for Digital Media at the <strong className="font-semibold text-foreground">Bauhaus Universität Weimar</strong>.
                         </p>
 
                         <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
