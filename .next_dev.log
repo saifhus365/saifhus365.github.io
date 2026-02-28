@@ -1,0 +1,39 @@
+
+> next_app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.246:3000
+
+✓ Starting...
+✓ Ready in 622ms
+ GET / 200 in 1094ms (compile: 716ms, render: 378ms)
+ GET / 200 in 2.7s (compile: 2.4s, render: 351ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.246:3000
+
+✓ Starting...
+✓ Ready in 571ms
+ GET / 200 in 831ms (compile: 539ms, render: 292ms)
+ GET / 200 in 839ms (compile: 575ms, render: 264ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.246:3000
+
+✓ Starting...
+✓ Ready in 471ms
+ GET / 200 in 674ms (compile: 409ms, render: 265ms)
+ GET / 200 in 683ms (compile: 443ms, render: 241ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.246:3000
+
+✓ Starting...
+✓ Ready in 575ms
+ GET / 200 in 808ms (compile: 477ms, render: 331ms)
+ GET / 200 in 823ms (compile: 516ms, render: 307ms)

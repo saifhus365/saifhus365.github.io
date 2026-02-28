@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0f;
+  --color-foreground: #f8fafc;
+  --color-muted: #94a3b8;
+
+  --color-accent-primary: #818cf8;
+  --color-accent-secondary: #c084fc;
+
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-inter);
+
+  --animate-float: float 20s infinite ease-in-out alternate;
+
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(50px, 50px) rotate(20deg);
+    }
+  }
+}
+
+/* Base styles that Tailwind doesn't catch natively */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    line-height: center;
+  }
+}
+
+/* Custom utility classes that map to the old CSS */
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-bg border border-glass-border backdrop-blur-md rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-primary to-accent-secondary;
+  }
+}
