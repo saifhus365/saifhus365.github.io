@@ -2,7 +2,7 @@ export const portfolioData = {
     hero: {
         name: "Husain Qasim Ali Saif",
         badge: "UAE Golden Visa Holder",
-        title: "Research ML Engineer",
+        title: "AI Engineer",
         subtitle: "specializing in LLM Systems & RAG",
         description:
             "Bridging the gap between cutting-edge AI research and scalable production systems. Designing intelligent, resilient architectures using language models and multi-agent systems.",
@@ -14,25 +14,46 @@ export const portfolioData = {
     },
     skills: [
         {
-            category: "LLM Systems",
+            category: "LLM Systems & Multi-Agent AI",
             icon: "Brain",
-            description:
-                "RAG (LangChain, LlamaIndex), Multi-Agent AI (LangGraph, CrewAI), Prompt Engineering, Hallucination Reduction.",
-            tags: ["BAAI", "ColBERT", "Pinecone", "Chroma"],
+            description: "Designing reasoning-focused multi-agent orchestrations, RAG pipelines, and grounded generation engines.",
+            tags: [
+                { name: "LangChain", icon: "SiLangchain" },
+                { name: "LlamaIndex", icon: "SiLlamaindex" },
+                { name: "LangGraph", icon: "SiLanggraph" },
+                { name: "CrewAI", icon: "TbRobot" },
+                { name: "Pinecone", icon: "SiPinecone" },
+                { name: "ChromaDB", icon: "SiChroma" },
+                { name: "Ollama", icon: "SiOllama" },
+            ],
         },
         {
-            category: "ML & Research",
+            category: "Pure Machine Learning",
             icon: "Microscope",
-            description:
-                "Fine-tuning LLMs (LoRA, QLoRA), Computer Vision, Deep Learning, and advanced Experiment Tracking.",
-            tags: ["YOLOv10", "ViT", "DETR", "W&B", "MLflow"],
+            description: "Fine-tuning foundational models (LoRA), deep learning architectures, and complex experiment tracking.",
+            tags: [
+                { name: "PyTorch", icon: "SiPytorch" },
+                { name: "Python", icon: "SiPython" },
+                { name: "Hugging Face", icon: "SiHuggingface" },
+                { name: "OpenCV", icon: "SiOpencv" },
+                { name: "W&B", icon: "SiWeightsandbiases" },
+                { name: "MLflow", icon: "SiMlflow" },
+                { name: "Scikit-Learn", icon: "SiScikitlearn" },
+            ],
         },
         {
-            category: "Engineering & MLOps",
+            category: "Full-Stack & MLOps",
             icon: "Server",
-            description:
-                "Building robust, scalable pipelines and APIs. Containerization, CI/CD, and Cloud Deployments.",
-            tags: ["Python", "PyTorch", "FastAPI", "Docker", "React", "Azure / GCP"],
+            description: "Taking research out of notebooks and deploying it into blazing-fast, scalable, full-stack web applications.",
+            tags: [
+                { name: "FastAPI", icon: "SiFastapi" },
+                { name: "Docker", icon: "SiDocker" },
+                { name: "Next.js", icon: "SiNextdotjs" },
+                { name: "React", icon: "SiReact" },
+                { name: "Tailwind CSS", icon: "SiTailwindcss" },
+                { name: "Google Cloud", icon: "SiGooglecloud" },
+                { name: "GitHub Actions", icon: "SiGithubactions" },
+            ],
         },
     ],
     experience: [

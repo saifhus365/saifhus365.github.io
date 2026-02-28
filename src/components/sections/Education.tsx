@@ -75,7 +75,7 @@ export default function Education() {
                                             dangerouslySetInnerHTML={{
                                                 __html: detail.replace(
                                                     /\*\*(.*?)\*\*/g,
-                                                    '<strong class="text-white font-semibold">$1</strong>'
+                                                    '<strong class="text-foreground font-semibold">$1</strong>'
                                                 ),
                                             }}
                                         ></p>

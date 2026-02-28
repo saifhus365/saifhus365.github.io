@@ -1,60 +1,87 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Projects() {
+    const targetRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const [scrollRange, setScrollRange] = useState(0);
     const { projects } = portfolioData;
 
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15 },
-        },
-    };
+    useEffect(() => {
+        const updateMetrics = () => {
+            if (trackRef.current) {
+                const scrollWidth = trackRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                // The max scroll distance needed is exactly the hidden overflow.
+                // If content fits completely, maxScroll is 0 (and no sticky translation occurs).
+                const maxScroll = Math.max(0, scrollWidth - viewportWidth);
+                setScrollRange(maxScroll);
+            }
+        };
 
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6 },
-        },
-    };
+        updateMetrics();
+        // Delay to account for fonts or image loading layout shifts
+        const timeout = setTimeout(updateMetrics, 500);
+
+        window.addEventListener("resize", updateMetrics);
+        return () => {
+            clearTimeout(timeout);
+            window.removeEventListener("resize", updateMetrics);
+        };
+    }, []);
+
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        // Start tracking when the container hits the top, stop when its end hits bottom
+        offset: ["start start", "end end"]
+    });
+
+    // Map 0 -> 1 progress to 0 -> -(how far we need to translate horizontally)
+    const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
+
+    // Set explicit height to allow 1px vertical scroll -> 1px horizontal scroll map.
+    // If no scrollRange is needed, it defaults to normal block flow.
+    const sectionHeight = scrollRange > 0 ? `calc(100vh + ${scrollRange}px)` : "auto";
 
     return (
-        <section id="projects" className="py-24 relative z-10 w-full">
-            <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading mb-16 text-foreground">
-                        Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">Projects</span>
-                    </h2>
-                </motion.div>
+        <section ref={targetRef} id="projects" className="relative bg-background" style={{ height: sectionHeight }}>
+            <div className={scrollRange > 0 ? "sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden pt-20" : "flex flex-col items-center justify-center py-24 overflow-hidden"}>
 
+                <div className="container mx-auto px-6 md:px-12 max-w-6xl w-full mb-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground">
+                            Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">Projects</span>
+                        </h2>
+                    </motion.div>
+                </div>
+
+                {/* The horizontally moving track */}
                 <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    ref={trackRef}
+                    style={{ x: scrollRange > 0 ? x : 0 }}
+                    className="flex gap-8 px-6 md:px-12 w-max items-stretch mx-auto md:mx-0"
                 >
                     {projects.map((project, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            variants={itemVariants}
-                            className="bg-glass-bg border border-glass-border p-8 rounded-2xl backdrop-blur-md flex flex-col group hover:border-accent-primary/40 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                            className="w-[85vw] md:w-[500px] shrink-0 bg-glass-bg border border-glass-border p-8 rounded-3xl backdrop-blur-md flex flex-col group hover:border-accent-primary/20 transition-all shadow-xl shadow-black/5 relative overflow-hidden h-[550px]"
                         >
-                            <h3 className="text-2xl font-bold font-heading mb-2 text-foreground group-hover:text-accent-primary transition-colors">
+                            {/* Decorative accent gradient on hover */}
+                            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent-secondary/5 rounded-full blur-[80px] -z-10 group-hover:bg-accent-secondary/10 transition-all duration-700"></div>
+
+                            <h3 className="text-3xl font-bold font-heading mb-3 text-foreground group-hover:text-accent-primary transition-colors">
                                 {project.title}
                             </h3>
-                            <h4 className="text-accent-secondary font-medium mb-4">
+                            <h4 className="text-accent-secondary font-medium mb-6 text-lg">
                                 {project.subtitle}
                             </h4>
                             <p className="text-muted leading-relaxed mb-8 flex-grow">
@@ -65,7 +92,7 @@ export default function Projects() {
                                 {project.tags.map((tag, tIndex) => (
                                     <span
                                         key={tIndex}
-                                        className="px-3 py-1 bg-white/5 border border-glass-border rounded-full text-xs text-muted/80 whitespace-nowrap"
+                                        className="px-4 py-1.5 bg-background border border-glass-border/30 rounded-full text-xs font-medium text-muted/90 whitespace-nowrap shadow-sm"
                                     >
                                         {tag}
                                     </span>
@@ -78,7 +105,7 @@ export default function Projects() {
                                         href={project.github}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent-primary transition-colors"
+                                        className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent-primary transition-colors bg-white/50 hover:bg-white px-5 py-2.5 rounded-full shadow-sm border border-glass-border"
                                     >
                                         <Github size={18} />
                                         View Code
@@ -89,15 +116,17 @@ export default function Projects() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent-primary transition-colors"
+                                        className="flex items-center gap-2 text-sm font-semibold text-white bg-accent-primary hover:bg-accent-secondary transition-colors px-5 py-2.5 rounded-full shadow-md shadow-accent-primary/20"
                                     >
                                         <ExternalLink size={18} />
                                         Article
                                     </a>
                                 )}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
+                    {/* Patcher spacer to prevent harsh cutoff at screen edge */}
+                    <div className="w-[5vw] shrink-0"></div>
                 </motion.div>
             </div>
         </section>
