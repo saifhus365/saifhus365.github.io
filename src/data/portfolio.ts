@@ -5,7 +5,7 @@ export const portfolioData = {
         title: "AI Engineer",
         subtitle: "specializing in LLM Systems & RAG",
         description:
-            "Bridging the gap between cutting-edge AI research and scalable production systems. Designing intelligent, resilient architectures using language models and multi-agent systems.",
+            "",
         location: "Dubai, UAE",
         email: "saifhus365@gmail.com",
         phone: "+971569859353",
