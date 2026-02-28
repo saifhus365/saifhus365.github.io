@@ -92,7 +92,7 @@ export default function Projects() {
                                         className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent-primary transition-colors"
                                     >
                                         <ExternalLink size={18} />
-                                        Live Demo
+                                        Article
                                     </a>
                                 )}
                             </div>
