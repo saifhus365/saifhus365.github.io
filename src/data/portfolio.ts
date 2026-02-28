@@ -28,7 +28,7 @@ export const portfolioData = {
             ],
         },
         {
-            category: "Pure Machine Learning",
+            category: "Machine & Deep Learning ",
             icon: "Microscope",
             description: "Fine-tuning foundational models (LoRA), deep learning architectures, and complex experiment tracking.",
             tags: [
