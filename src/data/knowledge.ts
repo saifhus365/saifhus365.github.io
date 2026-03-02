@@ -354,9 +354,9 @@ export const knowledgePoints: KnowledgePoint[] = [
     },
     {
         id: "pgm-deep-learning",
-        label: "Probabilistic Graphical Models",
+        label: "Probabilistic Generative Models",
         category: "ML & Deep Learning",
-        description: "Probabilistic Graphical Models for structured prediction and uncertainty estimation in vision tasks.",
+        description: "Probabilistic Generative Models for image generation taks based on prompts.",
         ...near("ML & Deep Learning", -0.10, -0.08, 0.00),
         relatedProjects: ["Deep Learning CV Course"],
         relatedWork: "Studied PGMs as part of the advanced deep learning for computer vision curriculum at Bauhaus-Universität Weimar.",
