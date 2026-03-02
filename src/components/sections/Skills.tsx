@@ -17,7 +17,8 @@ const mainIconMap = {
 };
 
 // Map the string names from portfolio.ts to actual react-icon components
-const techIconMap: Record<string, React.ElementType> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const techIconMap: Record<string, any> = {
     SiLangchain, SiPytorch, SiPython,
     SiHuggingface, SiOpencv, SiWeightsandbiases, SiMlflow, SiScikitlearn,
     SiFastapi, SiDocker, SiNextdotjs, SiReact, SiTailwindcss, SiGooglecloud, SiGithubactions,
@@ -100,7 +101,7 @@ export default function Skills() {
                                                 key={tagIndex}
                                                 className="flex items-center gap-1.5 px-3 py-1.5 bg-background border border-glass-border/40 rounded-lg text-xs font-semibold text-foreground/80 hover:text-accent-primary hover:border-accent-primary/40 transition-colors shadow-sm"
                                             >
-                                                {TechIcon && <TechIcon className="text-accent-secondary" size={14} />}
+                                                {TechIcon && <TechIcon className={"text-accent-secondary"} size={14} />}
                                                 {tag.name}
                                             </span>
                                         );

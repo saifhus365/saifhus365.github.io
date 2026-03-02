@@ -177,3 +177,7 @@
  GET / 200 in 125ms (compile: 93ms, render: 32ms)
  GET / 200 in 23ms (compile: 1165µs, render: 22ms)
  GET / 200 in 23ms (compile: 11ms, render: 12ms)
+'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+ GET / 200 in 302ms (compile: 23ms, render: 280ms)
+'var(--color-accent-primary)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+ GET / 200 in 131ms (compile: 22ms, render: 108ms)
