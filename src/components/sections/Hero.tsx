@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
+import ParticleField from "@/components/ui/ParticleField";
 
 export default function Hero() {
     const { hero } = portfolioData;
@@ -27,9 +28,10 @@ export default function Hero() {
     return (
         <section
             id="about"
-            className="min-h-[100svh] flex items-center relative z-10 pt-20"
+            className="min-h-[100svh] flex items-center relative z-10 pt-20 overflow-hidden"
         >
-            <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+            <ParticleField />
+            <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
                 <motion.div
                     className="max-w-4xl"
                     variants={containerVariants}

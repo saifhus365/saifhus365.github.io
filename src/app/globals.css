@@ -42,6 +42,30 @@
     color: var(--color-foreground);
     line-height: center;
   }
+
+  /* Subtle tech grid */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(to right, #8080800a 1px, transparent 1px),
+      linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: -10;
+  }
+
+  /* Radial vignette */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--color-background) 100%);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: -9;
+  }
 }
 
 /* Custom utility classes that map to the old CSS */

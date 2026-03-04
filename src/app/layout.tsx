@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import InteractiveBackground from "@/components/ui/InteractiveBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,8 +28,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} font-body bg-background text-foreground antialiased relative max-w-[100vw] overflow-x-hidden`}
       >
-        <InteractiveBackground />
-
         {children}
       </body>
     </html>
