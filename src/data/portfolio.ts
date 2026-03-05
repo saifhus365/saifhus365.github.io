@@ -40,6 +40,7 @@ export const portfolioData = {
                 { name: "W&B", icon: "SiWeightsandbiases" },
                 { name: "MLflow", icon: "SiMlflow" },
                 { name: "Scikit-Learn", icon: "SiScikitlearn" },
+                { name: "Ensemble", icon: "TbStack2" },
             ],
         },
         {
@@ -54,6 +55,7 @@ export const portfolioData = {
                 { name: "Tailwind CSS", icon: "SiTailwindcss" },
                 { name: "Google Cloud", icon: "SiGooglecloud" },
                 { name: "GitHub Actions", icon: "SiGithubactions" },
+                { name: "SLURM/HPC", icon: "TbServer2" },
             ],
         },
     ],
@@ -86,7 +88,7 @@ export const portfolioData = {
             title: "RetMed",
             subtitle: "Replication and Transformation of Medical Imaging Data",
             description:
-                "Applied SOTA Object Detection models (ViT, YOLOv10, DETR) to the VindrCXR dataset for lung abnormality detection, beating top competition scores on Kaggle.",
+                "Studied top Kaggle VindrCXR competition submissions to understand winning chest X-ray detection strategies. SSHd into university HPC clusters using SLURM for multi-week GPU training of ViT, YOLOv10, DETR, and Faster R-CNN models. Monitored training with W&B and MLflow, evaluated using mAP metrics, and ensembled the best model outputs to surpass top competition scores on the leaderboard.",
             tags: ["Python", "PyTorch", "MMDet", "MMYOLO"],
             github: "https://github.com/alexkubl/retmed",
         },
@@ -94,7 +96,7 @@ export const portfolioData = {
             title: "Illumulus",
             subtitle: "Storytelling AI",
             description:
-                "Enhanced storytelling AI using RAG on Wikipedia documents, producing more realistic narratives. Integrated outputs into Stable Diffusion 3 for visual augmentation.",
+                "Built a storytelling AI powered by RAG over a large Wikipedia corpus. Systematically experimented with different chunking strategies, overlap ratios, embedding models, and vector databases to maximize precision and recall of true facts. Evaluated retrieval quality against ground-truth fact sets. Integrated Ollama-served local LLMs for privacy-first narrative generation and Stable Diffusion 3 for AI-driven visual augmentation of stories.",
             tags: ["Python", "LangChain", "Ollama", "PyTorch", "FastAPI", "React"],
             link: "https://www.uni-weimar.de/de/universitaet/aktuell/bauhausjournal-online/titel/leipziger-buchmesse-illumulus-zeigt-wie-ki-gesteuertes-storytelling-gelingt-1/",
         },

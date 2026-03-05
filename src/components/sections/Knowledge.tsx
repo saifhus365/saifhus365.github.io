@@ -95,11 +95,13 @@ export default function Knowledge() {
     return (
         <section id="knowledge" ref={outerRef} className="relative" style={{ height: "300vh" }}>
             {/* Sticky inner container — locks to viewport while scrolling through outer */}
-            <div className="sticky top-0 h-screen w-full overflow-hidden bg-background flex flex-col">
+            <div className="sticky top-0 h-screen w-full overflow-hidden bg-background flex flex-col"
+                style={{ paddingTop: "0px" }}
+            >
                 {/* Title — fades out as content locks in */}
                 <motion.div
                     style={{ opacity: titleOpacity, y: titleY }}
-                    className="text-center pt-6 pb-4 shrink-0"
+                    className="text-center pt-3 pb-2 shrink-0"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground">
                         Knowledge{" "}
@@ -116,10 +118,10 @@ export default function Knowledge() {
                 {/* Main content — search, canvas, details all in one view */}
                 <motion.div
                     style={{ opacity: contentOpacity, scale: contentScale }}
-                    className="flex-1 flex flex-col min-h-0 px-4 md:px-8 pb-4"
+                    className="flex-1 flex flex-col min-h-0 px-2 md:px-4 pb-2"
                 >
                     {/* Search bar row */}
-                    <div className="shrink-0 pt-2 pb-3 z-10">
+                    <div className="shrink-0 pt-1 pb-2 z-10">
                         <KnowledgeSearch
                             onSearchChange={handleSearchChange}
                             onCategoryFilter={handleCategoryFilter}
@@ -130,7 +132,7 @@ export default function Knowledge() {
                     </div>
 
                     {/* Canvas + Detail side-by-side */}
-                    <div className="flex-1 flex gap-4 min-h-0">
+                    <div className="flex-1 flex gap-3 min-h-0">
                         {/* 3D Canvas — takes full width, or shrinks when detail is open */}
                         <div
                             className={`relative rounded-2xl overflow-hidden border border-glass-border bg-gradient-to-br from-[#f0f4f8] to-[#faf9f6] transition-all duration-500 ${selectedPoint ? "flex-[3]" : "flex-1"
